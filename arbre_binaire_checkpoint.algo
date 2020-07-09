@@ -1,0 +1,110 @@
+
+ALGORITHM algorithm_name
+VAR
+    
+
+            BST:STRUCT
+                 val:integer;
+                 RC:^BST;
+                 LC:^BST;
+                 END_STRUCT
+
+BEGIN
+
+
+ FUNCTION count_nodes(root : ^BST) : INTEGER
+    VAR
+    res :INTEGER;
+     BEGIN
+                 
+    if (root=null)
+      RETURN 0;
+
+     res:=0;
+
+    if (root.RC !=null and  root.LC != null)
+    then
+    res++;
+                
+    res +=(count_nodes(root.RC)+count_nodes(root.LC);
+    RETURN (res);
+    END 
+
+FUNCTION hauteur_tree(root : ^BST) : INTEGER
+    VAR
+   
+     BEGIN
+                 
+    if (root=null)
+      RETURN 0;
+
+     else 
+     return 1+max(hauteur_tree(root.RC),hauteur_tree(root.LC))
+    END 
+
+FUNCTION count_leaves(root : ^BST) : INTEGER
+    VAR
+   
+     BEGIN
+                 
+    if (root=null)
+      RETURN 0;
+
+     else 
+     if root.RC = 0 and root.LC= 0 
+     then
+     return 1 
+     else 
+     return count_leaves(root.RC)+count_leaves(root.LC);
+     end if
+    END
+
+    FUNCTION find_max(root : ^BST, node : ^BST) : INTEGER
+    VAR
+    max : INTEGER;
+   
+     BEGIN
+                 
+    if (root= null)
+
+    return 0;
+    max := node.val;
+     else  
+
+
+     int max = node.element;
+    if(node.LC != null) {
+        max = Math.max(max, find_max(node.LC));
+    }
+    if(node.RC != null) {
+        max = Math.max(max, find_max(node.RC));
+    }
+    return max;
+}}
+    END  
+
+    FUNCTION full_tree(node : ^BST) : BOOLEAN
+    VAR
+   
+     BEGIN
+                 
+    if 
+    {
+        (root=null)
+      RETURN true;
+    }
+      end if 
+     if
+     {
+     (node.LC == null && node.RC == null ) 
+            return true; 
+    else if
+     {
+     ((node.LC!=null) && (node.RC!=null)) 
+            return (FullTree(node.LC) && FullTree(node.RC)); 
+           
+        else
+        return false; 
+     }}
+    END
+    END
